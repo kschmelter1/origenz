@@ -1,0 +1,29 @@
+// Shiftnav
+#shiftnav-toggle-main .shiftnav-toggle-burger, #shiftnav-toggle-main.shiftnav-toggle-main-entire-bar:before {
+  padding: 13px 20px !important;
+}
+#shiftnav-toggle-main {
+  background-color: $secondary !important;
+}
+.shiftnav.shiftnav-skin-standard-dark, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu {
+  background-color: #0a2243 !important;
+}
+
+#shiftnav-main {
+  .menu-item, .btn-primary {
+    font-size: 1rem !important;
+    border: 0 !important;
+    .shiftnav-target {
+        border: 0 !important;
+        text-transform: none !important;
+        text-shadow: 0 !important;
+    }
+  }
+  .btn-primary:not(.nav-item):before {
+    display: none !important;
+  }
+}
+
+.shiftnav.shiftnav-nojs.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item > .shiftnav-target:hover, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item.shiftnav-active > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item.shiftnav-in-transition > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item.current-menu-item > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu > li.shiftnav-sub-accordion.current-menu-ancestor > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu > li.shiftnav-sub-shift.current-menu-ancestor > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu.shiftnav-active-highlight li.menu-item > .shiftnav-target:active, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu.shiftnav-active-on-hover li.menu-item > .shiftnav-target:hover {
+  background: $secondary !important;
+}

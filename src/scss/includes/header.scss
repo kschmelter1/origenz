@@ -1,0 +1,178 @@
+$topPad: .75rem; $bottomPad: .5rem;
+#main-header {
+  position: relative;
+  .topbar {
+    font-weight: $weight-reg;
+    border-bottom: solid 1px $blue;
+    overflow: hidden;
+    .container-fluid {
+      @include media-breakpoint-down(lg) {
+        padding-left: 0; padding-right: 0;
+      }
+    }
+    &-left {
+      padding-top: $topPad; padding-bottom: $bottomPad;
+      color: #fff;
+      background-color: #0a2447;
+      //box-shadow: -220px 0px 0px 500px #0a2447;
+      align-items: center;
+      display: flex;
+      position: relative;
+      @include media-breakpoint-down(lg) {
+        padding-left: calc(3% + 65px); padding-right: calc(3% + 14px);
+      }
+      &::before {
+        @extend %pseudo;
+        @extend %navy-grad;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 50vw;
+        @include media-breakpoint-down(lg) {
+          width: 100%;
+        }
+      }
+    }
+    &-alert {
+      margin-bottom: .25rem;
+      font-weight: $weight-bold;
+      margin-right: 1rem;
+      font-size: 1.1rem;
+      position: relative;
+    }
+    &-right {
+      padding-top: $topPad; padding-bottom: $bottomPad;
+      display: flex;
+      justify-content: space-between;
+      @include media-breakpoint-down(lg) {
+        padding-left: calc(3% + 14px); padding-right: calc(3% + 14px);
+      }
+      a {
+        color: $blue;
+        transition: all .25s ease;
+        //@include link_underline($cyan, 0, .25rem);
+        &:hover {
+          color: $cyan;
+          text-decoration: none;
+        }
+      }
+    }
+    .links {
+      display: flex;
+      & > a {
+        font-weight: $weight-reg;
+        margin-right: 2rem;
+      }
+    }
+    .social-media {
+      margin: 0;
+      .list-inline-item:not(:last-child) {
+        margin-right: 1rem;
+      }
+      i {
+        font-size: 1.3rem;
+        font-weight: 200;
+      }
+    }
+    .cart-contents {
+      position: relative;
+      color: $blue;
+      padding: 0 .5rem;
+      font-size: 1.3rem;
+      &:before {
+          font-family:'Font Awesome 5 Pro';
+          content: "\f07a";
+          margin-top:10px;
+          font-style:normal;
+          font-weight:400;
+          vertical-align: bottom;
+      }
+      &:hover {
+          text-decoration: none;
+          //color: white;
+      }
+      .cart-contents-count {
+          color: $blue;
+          line-height: 1;
+          font-family: Arial, Helvetica, sans-serif;
+          vertical-align: top;
+          font-weight: 300;
+      }
+    }
+  }
+
+  .main-navigation {
+    padding: 2rem 0;
+    @extend %section-shadow;
+    .navbar {padding-left: 0; padding-right: 0;}
+    .navbar-nav {
+      align-items: center;
+      .nav-item {
+        &:not(.btn) {
+          @include media-breakpoint-down(lg) {
+            display: none;
+          }
+        }
+      }
+      .nav-link {
+        font-weight: $weight-reg;
+        margin-right: 2.5rem;
+        @extend %transition;
+        @include link-underline();
+        &:hover {
+          color: $blue;
+        }
+      }
+      .btn-primary {
+        margin-left: .5rem;
+        font-size: 1rem;
+        background-color: $primary;
+        &.page-item-282.current_page_item {
+          display: none;
+        }
+        @include media-breakpoint-down(lg) {
+          margin-left: 0;
+        }
+        @include media-breakpoint-down(sm){
+          font-size: .9rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+        .nav-link {
+          color: #fff;
+          position: relative;
+          padding: 0;
+          margin-right: 0;
+          &:before {
+            @extend %fa;
+            @extend %dna;
+            margin-right: .5rem;
+          }
+        }
+        &:hover {
+          background-color: darken($primary, 10%);
+          .nav-link:before {
+            @extend %rotating;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.page-title {
+  @extend %bg-cover;
+  @extend %section-shadow;
+  padding: 3rem 0 3.5rem;
+  //margin-bottom: 3rem;
+  h1 {
+    text-transform: lowercase;
+    display: inline-block;
+    line-height: 1;
+    @include text-underline(.35em, -.5rem);
+    &::before {
+      left: -.75rem; right: -.75rem;
+    }
+  }
+}

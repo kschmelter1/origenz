@@ -1,0 +1,52 @@
+@keyframes whiteGrad {
+    0%{background-position:-25% 50%; opacity: 0;}
+    5%{opacity: 1;}
+    95%{background-position:110% 50%; opacity: 1;}
+    100%{background-position:110% 50%; opacity: 0;}
+}
+
+.block-cta-large {
+  //margin: 8rem 0 10rem;
+  img {
+    position: relative;
+    top: 3rem;
+  }
+  .row {
+    background-size: cover;
+    background-position: center;
+    //add gradient
+    position: relative;
+    &::after {
+      @extend %pseudo;
+      @extend %pos-cover;
+      background: linear-gradient(to right, rgba(255,255,255,0) 46%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 54%);
+      background-size: 200% 200%;
+      animation: whiteGrad 15s ease infinite;
+      animation-delay: .5s;
+      z-index: 1;
+    }
+    & > div {
+      z-index: 5;
+    }
+  }
+  .content {
+    background-color: rgba(255,255,255,.80);
+    padding: 2rem;
+    p {
+      font-size: 1.15rem;
+      max-width: 36rem;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}
+.block-cta-text {
+  .content {
+    text-align: center;
+    color: $blue;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}

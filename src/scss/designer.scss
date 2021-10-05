@@ -1,0 +1,250 @@
+/**
+ * Origenz Designer
+ */
+
+.design-wrapper {
+    opacity: 0;
+    padding-bottom: 4rem;
+    position: relative;
+    &.ready {
+        opacity: 1;
+    }
+
+    h2 {
+      margin-bottom: 3rem;
+      font-size: 2.25rem;
+    }
+    h3 {
+      margin-bottom: 2rem;
+      font-size: 2.25rem;
+      @include media-breakpoint-down(md) {
+        font-size: 1.5rem;
+      }
+    }
+
+    .design-nav {
+      margin-top: 6rem;
+      margin-bottom: 5rem;
+
+      .nav {
+        @include media-breakpoint-down(md) {
+          flex-direction: column;
+        }
+      }
+      .nav-item {
+        flex: 0 1 auto;
+        margin: 0 1rem;
+        position: relative;
+        @include media-breakpoint-down(md) {
+          margin-left: 0;
+          margin-right: 0;
+        }
+        &::before {
+          @extend %pseudo;
+          @extend %center-vertical;
+          background-color: $light;
+          height: 1px;
+          left: -2rem;
+          right: -2rem;
+          z-index: -1;
+          @include media-breakpoint-down(md) {
+            display: none;
+          }
+        }
+        &:not(:last-child) {
+          @include media-breakpoint-down(md) {
+            margin-bottom: 1rem;
+          }
+        }
+        &:first-child {
+          margin-left: 0;
+          &::before {
+            left: 0;
+          }
+        }
+        &:last-child {
+          margin-right: 0;
+          &::before {
+            right: 0;
+          }
+        }
+      }
+      .nav-link {
+        @extend %form-grey-border;
+        @extend %transition;
+        &.active {
+          color: $primary;
+          border-color: $primary;
+          &:hover {
+            cursor: default;
+          }
+        }
+        &:not(.active):hover {
+          color: #fff;
+          border-color: $primary;
+          background-color: $primary;
+        }
+      }
+    }
+
+    .design-content {
+        .design-step {
+          .design-region, .design-country-list {
+            &-item {
+              @include media-breakpoint-down(md) {
+                display: flex;
+                flex-wrap: wrap;
+                .select-wrapper {
+                  flex: 0 0 50%;
+                  flex-grow: 1;
+                  min-width: 0;
+                }
+                .text-danger {
+                  flex: 0 0 100%;
+                }
+                .percent {
+                  flex: 0 0 5rem;
+                  &::after {
+                    top: calc(50% - 7px);
+                  }
+                  input {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+          &-divider {
+            @extend %section-shadow;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+          }
+          &-section {
+            &.bulleted {
+              padding-left: 3.75rem;
+              position: relative;
+              .bullet {
+                color: #fff;
+                line-height: 1;
+                position: absolute;
+                top: .5rem;
+                left: 1rem;
+                font-size: 2.25rem;
+                font-weight: $weight-reg;
+                &:before {
+                  @extend %pseudo;
+                  left: 50%; top: calc(50% + 3px);
+                  transform: translate(-50%, -50%);
+                  background-color: $cyan;
+                  border-radius: 100%;
+                  height: 3rem;
+                  width: 3rem;
+                  z-index: -1;
+                }
+              }
+            }
+          }
+          .design-country-region {
+            &-name {
+              font-weight: bold;
+              font-style: italic;
+              color: $primary;
+              margin-bottom: .5rem;
+              margin-left: .5rem;
+            }
+            &-item {
+              margin-bottom: 1.5rem;
+            }
+          }
+
+            &.design-step-choose-design {
+              .design-step-section {
+                margin-bottom: 3rem;
+              }
+                .design-loading {
+                    i.fa-spinner {
+                        font-size: 32px;
+                    }
+
+                    .loading-text {
+                        font-size: 24px;
+                    }
+                }
+            }
+
+            &.design-step-choose-product {
+                .design-choice {
+                    img {
+                        width: 75px;
+                        height: auto;
+                    }
+                }
+            }
+        }
+
+        .flag-image-preview {
+            padding: 2rem;
+            transition: background-color .25s ease;
+            border-radius: 1rem;
+            &:hover {
+              background-color: darken(#fff, 10%);
+            }
+            &.active {
+                padding: calc(2rem - 5px);
+                border: 5px solid $primary;
+            }
+        }
+    }
+
+    .dna-processed-by-wrapper {
+        input {
+            display: none;
+
+            // &:checked + label {
+            //     background-color: $primary;
+            //     color: $white;
+            // }
+        }
+
+        // label {
+        //     background-color: $gray-100;
+        //     color: $black;
+        //
+        //     &:hover {
+        //         background-color: $primary;
+        //         color: $white;
+        //     }
+        // }
+    }
+}
+
+.design-choice {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+    img {
+        width: 75px;
+        height: auto;
+        margin-right: .5rem;
+    }
+    span {
+      font-weight: $weight-bold;
+      color: $blue;
+      margin-right: .5rem;
+    }
+    a {
+      font-style: italic;
+    }
+}
+
+// Remove arrows from number input
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

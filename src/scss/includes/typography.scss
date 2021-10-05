@@ -1,0 +1,34 @@
+body {
+  font-family: $main-font;
+  font-weight: $weight-lt;
+  color: $black;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $blue;
+  font-weight: $weight-bold;
+  u, strong, b, span[style*="text-decoration: underline"], .search-query {
+    @include text-underline();
+  }
+}
+h1, .h1 {
+  font-size: 3.75rem;
+  @include media-breakpoint-down(sm) {
+    font-size: 2.75rem;
+  }
+}
+h2, .h2 {
+  font-size: 2.75rem;
+  margin-bottom: 1.25rem;
+  @include media-breakpoint-down(sm) {
+    font-size: 2rem;
+  }
+}
+h3, .h3 {
+  @include media-breakpoint-down(sm) {
+    font-size: 1.5rem;
+  }
+}
+h4, .h4 {
+  font-weight: 600;
+}

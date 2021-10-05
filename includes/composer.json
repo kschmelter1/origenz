@@ -1,0 +1,14 @@
+{
+    "name": "origenz/origenz",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Kevin Hall",
+            "email": "krhall@compulse.com"
+        }
+    ],
+    "require": {
+        "printful/php-api-sdk": "^2.2"
+    }
+}

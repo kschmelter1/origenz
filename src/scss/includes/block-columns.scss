@@ -1,0 +1,36 @@
+.block-two-column {
+  .btn {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .content {
+    padding-right: 1rem;
+    @include media-breakpoint-down(sm) {
+      padding-right: 0;
+    }
+    h4 {
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+  .bleed {
+    position: relative;
+    img {
+      width: 100%;
+      padding-left: 2rem;
+      padding-top: .5rem;
+    }
+    &:after {
+      @extend %pseudo;
+      background-color: $secondary;
+      height: 3.5rem;
+      left: 0;
+      width: 76%;
+      bottom: -1.5rem;
+      z-index: -1;
+    }
+  }
+}

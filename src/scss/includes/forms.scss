@@ -1,0 +1,159 @@
+.newsletter-signup {
+  padding: 1rem 0;
+  background-color: $blue;
+  @extend %navy-grad;
+  form {
+    justify-content: center;
+  }
+  label {
+    color: #fff;
+    font-weight: $weight-bold;
+    margin: 0 1rem;
+    font-size: 2rem;
+    position: relative;
+    top: -3px;
+    &::before {
+      content: '';
+      position: relative;
+      top: 3px;
+      background-image: url('img/Petals.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 4rem;
+      width: 4rem;
+      margin-right: 1rem;
+    }
+  }
+  .form-control {
+    border-radius: .5rem;
+    background-color: #D8D8D8;
+    border: 0;
+    height: auto;
+    margin: 0 .75rem;
+    font-size: 1.3rem;
+    padding: .35rem 1rem .5rem;
+    width: 26rem;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.design-wrapper {
+  .select-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: .75rem;
+    width: 36%;
+    min-width: 446px;
+    max-width: 100%;
+    &:after {
+      @extend %fa;
+      content: '\f107';
+      font-weight: bold;
+      position: absolute;
+      right: 1rem;
+      @extend %center-vertical;
+      color: $primary;
+      pointer-events: none;
+    }
+    select {
+      width: 100%;
+      -webkit-appearance: none;
+      @extend %form-blue-border;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .add-more {
+    font-style: italic;
+    margin-left: .5rem;
+  }
+  .remove-this {
+      color: $primary;
+      @extend %transition;
+      &:hover {
+        color: $cyan;
+        cursor: pointer;
+      }
+  }
+  input[type="number"] {
+    @extend %form-blue-border;
+  }
+  .percent {
+    position: relative;
+    display: inline-block;
+    margin: 0 .75rem;
+    &:after {
+      content: '%';
+      position: absolute;
+      right: 1rem;
+      color: $primary;
+      top: calc(50% - 2px);
+      transform: translateY(-50%);
+    }
+    input[type="number"] {
+      text-align: right;
+      width: 5rem;
+      padding-right: 1.9rem;
+    }
+
+  }
+  input[type="radio"] {
+    &+label {
+      margin-right: 1rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &:checked+label {
+      background-color: $primary;
+      color: #fff;
+      cursor: normal;
+    }
+  }
+}
+
+:focus {
+  outline-color: rgba(50,191,214,.5);
+}
+
+//Gravity Forms
+.gform_wrapper {
+  .gfield {
+    &_label {
+      color: $blue;
+    }
+    &_required {
+      color: $secondary !important;
+    }
+    .ginput_container {
+      input, textarea {
+        @extend %form-flat;
+        width: 100% !important;
+      }
+    }
+  }
+  .gform_footer {
+    .gform_button {
+      font-size: 1.3rem;
+      padding: .35rem 1.5rem .5rem;
+      font-weight: 600;
+      background-color: $primary;
+      color: #fff;
+      border-radius: .5rem;
+      line-height: 1.5;
+      border: 0;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+      &:hover {
+        background-color: darken($primary, 10%);
+      }
+    }
+  }
+}
+
+select::-ms-expand {
+    display: none !important;
+}

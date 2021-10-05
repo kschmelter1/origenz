@@ -1,0 +1,56 @@
+.block {
+  font-size: 1.2rem;
+  margin: 5rem 0;
+}
+.container-fluid {
+  padding: 0 calc(10% + 14px);
+  @include media-breakpoint-down(lg) {
+    padding: 0 calc(3% + 14px);
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 0 calc(.5rem + 14px);
+  }
+  &.flush-left {
+    padding-left: 0;
+    .row {
+      margin-left: 0;
+    }
+    @include media-breakpoint-down(md) {
+      padding-left: calc(3% + 14px);
+    }
+    @include media-breakpoint-down(sm) {
+      padding-left: calc(.5rem + 14px);
+      .row {
+        margin-left: -7px;
+      }
+    }
+  }
+  &.flush-right {
+    padding-right: 0;
+    .row {
+      margin-right: 0;
+    }
+    @include media-breakpoint-down(md) {
+      padding-right: calc(3% + 14px);
+    }
+    @include media-breakpoint-down(sm) {
+      padding-right: calc(.5rem + 14px);
+      .row {
+        margin-right: -7px;
+      }
+    }
+    & > .row > div:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.btn {
+  border-radius: .5rem;
+  &-primary {
+    @include btn-primary();
+  }
+  &-default {
+    @include btn-default();
+  }
+}

@@ -1,0 +1,85 @@
+.block-hero {
+  position: relative;
+  overflow: hidden;
+  margin-top: 0;
+  @extend %section-shadow;
+  &::before {
+    @extend %pseudo;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    background-image:url('img/leaf-bg.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .swiper-wrapper {
+    align-items: flex-end;
+  }
+  .swiper-pagination {
+    position: relative;
+    &-wrapper {
+      position: absolute;
+      height: 3rem;
+      bottom: 0;
+    }
+    width: 50%;
+    margin-left: auto;
+    display: flex;
+    padding-left: 9%;
+    &-bullet {
+      background: transparent;
+      margin: 0 .15rem;
+      width: 10px;
+      height: 10px;
+      border: solid 1px $black;
+      opacity: 1;
+      @extend %transition;
+      &-active {
+        background: $black;
+      }
+    }
+  }
+  .image {
+    padding-top: 2rem;
+    img {
+      max-height: 600px;
+    }
+  }
+  .content {  
+    @include media-breakpoint-down(md) {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    h1 {
+      padding-right: .5rem;
+      position: relative;
+      line-height: .85;
+      display: inline-block;
+      margin-bottom: 2rem;
+      &::before {
+        @extend %pseudo;
+        background-color: $secondary;
+        height: 2rem;
+        bottom: -1.15rem;
+        right: 0;
+        left: 0;
+        z-index: -1;
+        box-shadow: -10rem 0 0 0 $secondary;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 2.75rem;
+      }
+    }
+    .text {
+      color: $blue;
+      font-size: 1.25rem;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      max-width: 28rem;
+    }
+    .btn {
+      font-size: 1.3rem;
+    }
+  }
+}

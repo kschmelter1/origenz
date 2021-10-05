@@ -1,0 +1,52 @@
+.no-gutters {
+  padding: 0;
+  & > .row {
+    margin: 0;
+  }
+}
+.dna {
+  min-height: 25vw;
+  display: flex;
+  align-items: center;
+  svg {
+    position: absolute;
+    right: 3rem;
+    height: auto;
+    width: 40vw;
+    overflow: visible !important;
+    @include media-breakpoint-down(md) {
+      right: 9%;
+      transform: translateX(-50%);
+    }
+    path, g {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+.dna.dna-design {
+  position: absolute;
+    width: 40%;
+    min-height: 0;
+    overflow: hidden;
+    right: 0;
+    height: 100%;
+    top: -4rem;
+    display: block;
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  svg {
+    right: -30%;
+    top: 0;
+    position: absolute;
+  }
+}
+
+
+#line-1 {
+  transform-origin: bottom;
+}
+#circle-2 {
+  z-index: 2;
+}

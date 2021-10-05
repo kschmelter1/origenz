@@ -1,0 +1,89 @@
+.block-team {
+  .single-team {
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+    .subtitle {
+      color: $secondary;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+    }
+    .bio {
+      font-weight: 200;
+      p:last-child {
+        margin: 0;
+      }
+    }
+    .profile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 1rem 2rem;
+      &::before {
+        @extend %pseudo;
+        top: 0; bottom: 0; right: 21%; left: 0;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+        border-radius: .5rem;
+        background-color: #fff;
+      }
+      .countries {
+        position: relative;
+        flex-grow: 1;
+        margin-right: 1.5rem;
+        .country {
+          display: flex;
+          align-items: center;
+          background-color: #E9E9E9;
+          font-weight: 600;
+          font-size: 1.4rem;
+          padding: .65rem .75rem;
+          &:not(:last-child) {
+            margin-bottom: .5rem;
+          }
+          &-flag {
+            width: 3rem;
+            height: 2rem;
+            flex-shrink: 0;
+            margin-right: 1rem;
+            box-shadow: 0 2px 1px 0 rgba(0,0,0,.5);
+            position: relative;
+            img {
+              @extend %pos-cover;
+              height: 100%;
+              width: 100%;
+              @include object-fit(fill);
+            }
+          }
+          &-percent {
+            color: $primary;
+            margin-right: .5rem;
+          }
+          &-name {
+            line-height: 1;
+          }
+        }
+      }
+      .img-wrap {
+        position: relative;
+        padding: .5rem;
+        background-color: $blue;
+        @extend %navy-grad;
+        border-radius: 100%;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+        flex: 0 0 36%;
+        img {
+          border-radius: 100%;
+          border: solid .15rem #fff;
+          position: relative;
+        }
+        &:before {
+          @extend %pseudo;
+          top: 0; bottom: 0; right: 0; left: 0;
+
+        }
+      }
+    }
+  }
+}

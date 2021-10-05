@@ -1,0 +1,49 @@
+#menu-footer-menu {
+  &-1 {
+    justify-content: flex-end;
+    .nav-link {
+      color: $blue;
+      font-weight: $weight-reg;
+      font-size: 1.1rem;
+    }
+  }
+  &-2 {
+    justify-content: flex-end;
+    .nav-link {
+      color: $black;
+    }
+  }
+  &-3 {
+    .nav-link {
+      color: $light;
+      &::after {
+        opacity: .5;
+      }
+    }
+  }
+}
+
+footer {
+  padding-top: 8rem;
+  .nav-link {
+    @include link-underline();
+  }
+  .logo {
+    padding: 0;
+  }
+  .bottom-bar {
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+    color: $light;
+    a {
+      color: $light;
+    }
+    .footer-credit {
+      padding-top: .5rem;
+    }
+    .seo {
+      line-height: 1.3;
+      font-size: .9rem;
+    }
+  }
+}
